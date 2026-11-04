@@ -71,6 +71,15 @@
     footer { padding: 32px 0 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
     .disclaimer { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px; margin-bottom: 16px; }
 
+    .video { max-width: 340px; margin: 0 auto; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: #000; }
+    .video iframe { width: 100%; height: 100%; border: 0; display: block; }
+    .note { color: var(--muted); font-size: 13px; text-align: center; margin: 14px auto 0; max-width: 420px; }
+    .follow .card h3 { margin-bottom: 4px; }
+    .follow .card p { margin-bottom: 16px; }
+    .follow .btns { display: flex; flex-wrap: wrap; gap: 8px; }
+    .follow .btn { padding: 10px 16px; font-size: 14px; }
+    .btn.discord { background: #5865f2; color: #fff; }
+
     @media (max-width: 560px) {
       nav .links a { margin-left: 10px; }
       .hero { padding: 48px 0 40px; }
@@ -83,20 +92,30 @@
     <nav>
       <div class="logo">MBG <span>JOE</span></div>
       <div class="links">
-        <a href="#free">Free Tips</a>
+        <a href="#watch">Watch</a>
         <a href="#blueprint">Blueprint</a>
-        <a href="#music">Music</a>
+        <a href="#follow">Follow</a>
       </div>
     </nav>
 
     <!-- TOP OF PAGE -->
     <header class="hero">
       <h1>Stack it. Invest it.<br><span>Grow it.</span></h1>
-      <p>I'm MBG JOE. Nobody taught me about investing growing up. In the military, an older man put me on game. I've been building since 2019, and this is my exact blueprint. No gatekeeping.</p>
-      <!-- EDIT ME: paste your Gumroad / Stan Store link where it says # -->
+      <p>I'm MBG JOE. Nobody taught me about investing growing up. In the military, an older man put me on game. I've been building since 2019. Investing and trading paid off my debt and bought me time back with my family. This is my exact blueprint. No gatekeeping.</p>
       <a class="btn" href="#blueprint">Get the Blueprint</a>
       <a class="btn ghost" href="#free">Free Tips</a>
     </header>
+
+    <!-- TRADING VIDEO -->
+    <section id="watch">
+      <h2>Watch Me Trade</h2>
+      <p class="sub">Closing out my trades manually and locking in $1.3K.</p>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/LEebOoqy2kg" title="Watch Me Close Out Trades | MBG JOE" loading="lazy"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <p class="note">One of my real trades. Results vary, and losses happen too. Trading without a stop loss is risky. Not financial advice.</p>
+    </section>
 
     <!-- FREE SAMPLE: tips from the free blueprint -->
     <section id="free">
@@ -144,6 +163,36 @@
       </div>
     </section>
 
+    <!-- SOCIALS: two brands -->
+    <section id="follow" class="follow">
+      <h2>Follow the Journey</h2>
+      <p class="sub">Two sides of MBG JOE. Pick your lane, or follow both.</p>
+      <div class="grid">
+        <div class="card">
+          <div class="num">MBG JOE</div>
+          <h3>Life &amp; Family</h3>
+          <p>Time back with family, debt paid off, and what investing has bought me.</p>
+          <div class="btns">
+            <a class="btn ghost" href="https://www.tiktok.com/@mbgjoe" target="_blank" rel="noopener">TikTok</a>
+            <a class="btn ghost" href="https://www.instagram.com/mbgjoe_" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn ghost" href="https://www.youtube.com/@mbgjoe" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="num">MBG JOE TV</div>
+          <h3>Trading, Lives &amp; Gaming</h3>
+          <p>Trading breakdowns, live streams, gaming, and the trading community.</p>
+          <div class="btns">
+            <a class="btn ghost" href="https://www.tiktok.com/@mbgjoetv" target="_blank" rel="noopener">TikTok</a>
+            <a class="btn ghost" href="https://www.instagram.com/mbgjoetv" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn ghost" href="https://www.twitch.tv/mbgjoetv" target="_blank" rel="noopener">Twitch</a>
+            <!-- Discord invite: use a never-expiring, unlimited-use link -->
+            <a class="btn discord" href="https://discord.gg/PRHuSyEGc" target="_blank" rel="noopener">Join the Discord</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- MUSIC: kept small on purpose -->
     <section id="music">
       <h2>Music</h2>
@@ -162,11 +211,10 @@
         Everything here shares what I do and what I've learned. I'm not a licensed financial advisor.
         Investing has risk, and you can lose money. Do your own research before making any decision.
       </div>
-      <!-- Social links -->
       <p>
-        <a href="https://www.tiktok.com/@mbgjoe" target="_blank" rel="noopener">TikTok</a> ·
-        <a href="https://www.youtube.com/@mbgjoe" target="_blank" rel="noopener">YouTube</a> ·
-        <a href="https://www.instagram.com/mbgjoe_" target="_blank" rel="noopener">Instagram</a>
+        <a href="#follow">Socials</a> ·
+        <a href="https://www.twitch.tv/mbgjoetv" target="_blank" rel="noopener">Twitch</a> ·
+        <a href="https://discord.gg/PRHuSyEGc" target="_blank" rel="noopener">Discord</a>
       </p>
       <p>© MBG JOE</p>
     </footer>
