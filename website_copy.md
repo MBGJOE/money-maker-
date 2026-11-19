@@ -7,7 +7,7 @@
 **Subhead:** The exact blueprint I use to build generational wealth, from $0 to dynasty. No gatekeeping.
 
 **Buttons:**
-- Primary: **Get the Free Blueprint** (links to the free Lite PDF)
+- Primary: **Get the Free Blueprint** (links to the free edition on Gumroad: goodjoint.gumroad.com/l/MBGJOEFree)
 - Secondary: **Get the Full Edition** (links to Gumroad)
 
 ---
