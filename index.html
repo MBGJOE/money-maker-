@@ -84,6 +84,27 @@
     .follow .btn { padding: 10px 16px; font-size: 14px; }
     .btn.discord { background: #5865f2; color: #fff; }
 
+    .quiz fieldset { border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; margin: 0 0 12px; }
+    .quiz legend { font-weight: 700; padding: 0 6px; }
+    .quiz label { display: block; padding: 8px 4px; color: var(--muted); cursor: pointer; }
+    .quiz input[type=radio] { accent-color: var(--green); margin-right: 8px; }
+    .quiz .btn { border: 0; font: inherit; font-weight: 800; cursor: pointer; }
+    .result { margin-top: 18px; border-color: #2a4a35; }
+    .result p { margin: 8px 0; color: var(--text); }
+    .result .btn { margin-top: 10px; }
+    .calc label { display: block; margin-bottom: 14px; font-weight: 600; }
+    .calc input { display: block; width: 100%; margin-top: 6px; padding: 12px 14px; font: inherit; font-size: 18px; color: var(--text); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; }
+    .ratio-out { font-size: 28px; font-weight: 800; color: var(--green); margin-top: 6px; }
+    .ratio-meaning { margin: 6px 0 0; color: var(--text); }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; }
+    .compare { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .compare th { background: #0f1511; color: var(--green); text-align: left; padding: 10px 12px; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+    .compare td { padding: 10px 12px; border-top: 1px solid var(--line); color: var(--muted); }
+    .compare td:first-child { color: var(--text); }
+    .editions { margin-top: 18px; }
+    .editions .card p { margin-bottom: 16px; }
+    .editions .price { font-size: 36px; }
+
     @media (max-width: 560px) {
       nav .links a { margin-left: 10px; }
       .hero { padding: 48px 0 40px; }
@@ -96,7 +117,7 @@
     <nav>
       <div class="logo">MBG <span>JOE</span></div>
       <div class="links">
-        <a href="#watch">Watch</a>
+        <a href="#level">Level</a>
         <a href="#blueprint">Blueprint</a>
         <a href="#apps">Apps</a>
         <a href="#follow">Follow</a>
@@ -110,11 +131,17 @@
         <iframe src="https://www.youtube.com/embed/LEebOoqy2kg?autoplay=1&mute=1&loop=1&playlist=LEebOoqy2kg&controls=0&playsinline=1&modestbranding=1&rel=0&disablekb=1"
           title="" tabindex="-1" allow="autoplay; encrypted-media"></iframe>
       </div>
-      <h1>Stack it. Invest it.<br><span>Grow it.</span></h1>
-      <p>I'm MBG JOE. My cousin showed me the stock market when I was a kid. I opened my Webull account at 17 and made my first real investments at 18, in October 2018, posting my penny wins and losses. In the Navy, an older man put me on real game and handed me his notes on index funds. In 2025, I started actively trading too. Investing and trading paid off my debt and bought me time back with my family. This is my exact blueprint. No gatekeeping.</p>
-      <a class="btn" href="#blueprint">Get the Blueprint</a>
-      <a class="btn ghost" href="#free">Free Tips</a>
+      <h1>Broke to Rich.<br><span>Same Machine, Different Starting Line.</span></h1>
+      <p>The exact blueprint I use to build generational wealth, from $0 to dynasty. No gatekeeping.</p>
+      <a class="btn" href="downloads/MBG_JOE_Blueprint_LITE.pdf" download>Get the Free Blueprint</a>
+      <a class="btn ghost" href="https://goodjoint.gumroad.com/l/MBGJOE" target="_blank" rel="noopener">Get the Full Edition</a>
     </header>
+
+    <!-- STORY -->
+    <section id="story">
+      <h2>Who I Am</h2>
+      <p class="sub">I'm MBG JOE. My cousin showed me the stock market when I was a kid. I opened my Webull account at 17 and made my first real investments at 18, in October 2018, posting my penny wins and losses. In the Navy, an older man put me on real game and handed me his notes on index funds. In 2025, I started actively trading too. Investing and trading paid off my debt and bought me time back with my family. This is my exact blueprint. No gatekeeping.</p>
+    </section>
 
     <!-- TRADING VIDEO -->
     <section id="watch">
@@ -127,53 +154,94 @@
       <p class="note">One of my real trades. Results vary, and losses happen too. Trading without a stop loss is risky. Not financial advice.</p>
     </section>
 
-    <!-- FREE SAMPLE: tips from the free blueprint -->
-    <section id="free">
-      <h2>Free Tips</h2>
-      <p class="sub">A free taste of The Broke-to-Rich Blueprint. You can start from $1.</p>
-      <div class="grid">
-        <div class="card">
-          <div class="num">TIP 1</div>
-          <h3>Never skip the 401(k) match</h3>
-          <p>If your job matches your 401(k), always put in enough to get the full match. It's free money nothing else beats.</p>
-        </div>
-        <div class="card">
-          <div class="num">TIP 2</div>
-          <h3>Grow first, then flip</h3>
-          <p>Build the pile with growth funds first. About 2 years before you want out, flip it into monthly-income funds and live off the payouts.</p>
-        </div>
-        <div class="card">
-          <div class="num">TIP 3</div>
-          <h3>Kill 15%+ debt first</h3>
-          <p>Paying off high-interest debt is a guaranteed return the market can't promise. Do that before you invest hard.</p>
-        </div>
+    <!-- FIND YOUR LEVEL QUIZ -->
+    <section id="level">
+      <h2>Find Your Level</h2>
+      <p class="sub">Answer 4 quick questions. Get your level, your moves, and your next goal.</p>
+      <form class="quiz" id="quiz">
+        <fieldset>
+          <legend>1. How much do you have saved?</legend>
+          <label><input type="radio" name="q1" value="a" required> Under $1K</label>
+          <label><input type="radio" name="q1" value="b"> $1K to $5K</label>
+          <label><input type="radio" name="q1" value="c"> More than $5K, or 3 months of bills</label>
+        </fieldset>
+        <fieldset>
+          <legend>2. Do you have debt over 15% interest?</legend>
+          <label><input type="radio" name="q2" value="yes" required> Yes</label>
+          <label><input type="radio" name="q2" value="no"> No</label>
+        </fieldset>
+        <fieldset>
+          <legend>3. Are you investing yet?</legend>
+          <label><input type="radio" name="q3" value="no" required> Not yet</label>
+          <label><input type="radio" name="q3" value="yes"> Yes</label>
+        </fieldset>
+        <fieldset id="q4set" hidden>
+          <legend>4. How much is invested?</legend>
+          <label><input type="radio" name="q4" value="a"> Under $100K</label>
+          <label><input type="radio" name="q4" value="b"> $100K to $600K</label>
+          <label><input type="radio" name="q4" value="c"> Near $600K, or 2 years from quitting</label>
+          <label><input type="radio" name="q4" value="d"> $1M+</label>
+        </fieldset>
+        <button class="btn" type="submit">Show My Level</button>
+      </form>
+      <div class="card result" id="result" hidden>
+        <div class="num">YOUR LEVEL</div>
+        <h3 id="rLevel"></h3>
+        <p><strong>Where you are:</strong> <span id="rWhere"></span></p>
+        <p><strong>Your moves:</strong> <span id="rMoves"></span></p>
+        <p><strong>Goal:</strong> <span id="rGoal"></span></p>
+        <a class="btn" href="downloads/MBG_JOE_Blueprint_LITE.pdf" download>Send me the free blueprint.</a>
       </div>
-      <p style="text-align:center;margin-top:28px">
-        <a class="btn ghost" href="downloads/MBG_JOE_Blueprint_FREE.pdf" download>Download the Free Starter Edition (PDF)</a>
-      </p>
     </section>
 
-    <!-- PAID PRODUCT -->
+    <!-- FREEDOM RATIO CALCULATOR -->
+    <section id="ratio">
+      <h2>Your Freedom Ratio</h2>
+      <p class="sub">One number tells you how close you are to free. Monthly income from your investments divided by your monthly bills. At 100%, your assets pay your bills and work becomes optional.</p>
+      <div class="card calc">
+        <label>Monthly bills ($)<input type="number" id="bills" min="0" step="1" inputmode="decimal" placeholder="3000"></label>
+        <label>Monthly investment income ($)<input type="number" id="income" min="0" step="1" inputmode="decimal" placeholder="300"></label>
+        <div class="ratio-out" id="ratioOut">Enter your monthly bills to see your ratio.</div>
+        <p class="ratio-meaning" id="ratioMeaning"></p>
+      </div>
+      <p class="note">Know your monthly bills to the dollar. You can't hit a target you haven't measured.</p>
+    </section>
+
+    <!-- FREE VS FULL -->
     <section id="blueprint">
-      <div class="card buy">
-        <h2>The Broke-to-Rich Blueprint: Full Edition</h2>
-        <!-- EDIT ME: set your price -->
-        <div class="price">$9</div>
-        <ul>
-          <li>Exactly what I buy in my Roth IRA, with percentages</li>
-          <li>Brokerage Phase 1 (build) and Phase 2 (income flip)</li>
-          <li>My crypto split</li>
-          <li>Kids' accounts: Custodial Roth, UTMA, 529 age plan</li>
-          <li>The Machine: how every account works together</li>
-          <li>How much you need to retire at $1K to $30K a month</li>
-          <li>Find Your Path: exactly what to do at your stage, from $0 to $1M+</li>
-          <li>Protect the Dynasty: how to keep it once you've built it</li>
-          <li>My real story: how I paid off all my debt in about 6 months</li>
-          <li>Bonus: my personal trade checklist</li>
-          <li>Instant 9-page PDF download</li>
-        </ul>
-        <!-- Gumroad checkout link -->
-        <a class="btn" href="https://goodjoint.gumroad.com/l/MBGJOE" target="_blank" rel="noopener">Buy Now</a>
+      <h2>Free vs Full</h2>
+      <p class="sub">Start free. Get the exact route when you're ready.</p>
+      <div class="table-wrap">
+        <table class="compare">
+          <thead><tr><th>What you get</th><th>Free</th><th>Full</th></tr></thead>
+          <tbody>
+            <tr><td>Find Your Path levels and milestone ladder</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td>Freedom Ratio explained</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td>Grow then flip strategy</td><td>Concept</td><td>Exact funds and %</td></tr>
+            <tr><td>Every account setup (Roth, brokerage, crypto)</td><td>No</td><td>Yes</td></tr>
+            <tr><td>Flip plan and tax chunking</td><td>No</td><td>Yes</td></tr>
+            <tr><td>Kids' accounts and 529 schedule</td><td>No</td><td>Yes</td></tr>
+            <tr><td>Protect the Dynasty</td><td>No</td><td>Yes</td></tr>
+            <tr><td>Trade checklist</td><td>No</td><td>Yes</td></tr>
+            <tr><td>Freedom Ratio tracker</td><td>No</td><td>Yes</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="grid editions">
+        <div class="card">
+          <div class="num">FREE EDITION</div>
+          <h3>The Map</h3>
+          <div class="price">$0</div>
+          <p>My story, Find Your Path, the Freedom Ratio, grow then flip, killing debt, and what consistent investing can do. 5 pages.</p>
+          <a class="btn ghost" href="downloads/MBG_JOE_Blueprint_LITE.pdf" download>Get the Free Blueprint</a>
+        </div>
+        <div class="card buy">
+          <div class="num">FULL EDITION</div>
+          <h3>The Exact Route</h3>
+          <div class="price">$9</div>
+          <p>Every fund and percentage I use in every account, the flip plan, kids' accounts from birth, Protect the Dynasty, my trade checklist, and the Freedom Ratio tracker. 11 pages.</p>
+          <a class="btn" href="https://goodjoint.gumroad.com/l/MBGJOE" target="_blank" rel="noopener">Get the Full Edition</a>
+        </div>
       </div>
     </section>
 
@@ -263,5 +331,64 @@
     </footer>
 
   </div>
+<script>
+  // Find Your Level quiz
+  const LEVELS = {
+    ground: ['Ground Zero', '$0 to $1K, paycheck to paycheck', "Learn a skill that pays, add side income, sell what you don't use, cut non-essentials, kill 15%+ debt", '$1K cash. Stop living at $0.'],
+    cushion: ['The Cushion', '$1K to $5K saved', "Open a HYSA, auto transfer on payday, pay yourself first instead of saving what's left, grab the full 401(k) match", '$5K or 3 months of bills saved'],
+    builder: ['The Builder', 'Cushion done', 'Open the 4 accounts, run Phase 1, invest 15 to 25% of take-home pay, keep lifestyle the same as income grows', '$100K invested'],
+    accel: ['The Accelerator', '$100K+ invested', 'Max the Roth every year, backdoor Roth if your income gets too high, half of every raise goes to investing, keep the hedges', 'Freedom Ratio hits 50%'],
+    flip: ['The Flip', 'Near $600K or 2 years from quitting', 'Rotate growth into income in long term gain chunks across 2 tax years, build 1 to 2 years of cash in a HYSA', 'Freedom Ratio hits 100%'],
+    dynasty: ['The Dynasty', '$1M+', 'Protect it, pass it down', 'Assets pay the bills forever'],
+  };
+  const quiz = document.getElementById('quiz');
+  const q4set = document.getElementById('q4set');
+  const val = (n) => (quiz.querySelector(`input[name="${n}"]:checked`) || {}).value;
+  quiz.addEventListener('change', () => {
+    const investing = val('q3') === 'yes';
+    q4set.hidden = !investing;
+    q4set.querySelectorAll('input').forEach((i) => { i.required = investing; });
+  });
+  quiz.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const q1 = val('q1'), q2 = val('q2'), q4 = val('q3') === 'yes' ? val('q4') : 'a';
+    let key;
+    if (q4 === 'd') key = 'dynasty';
+    else if (q4 === 'c') key = 'flip';
+    else if (q4 === 'b') key = 'accel';
+    else if (q1 === 'a' || q2 === 'yes') key = 'ground';
+    else if (q1 === 'b') key = 'cushion';
+    else key = 'builder';
+    const [level, where, moves, goal] = LEVELS[key];
+    document.getElementById('rLevel').textContent = level;
+    document.getElementById('rWhere').textContent = where;
+    document.getElementById('rMoves').textContent = moves;
+    document.getElementById('rGoal').textContent = goal;
+    const result = document.getElementById('result');
+    result.hidden = false;
+    result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+
+  // Freedom Ratio calculator
+  const bills = document.getElementById('bills');
+  const income = document.getElementById('income');
+  const out = document.getElementById('ratioOut');
+  const meaning = document.getElementById('ratioMeaning');
+  function updateRatio() {
+    const b = parseFloat(bills.value), i = parseFloat(income.value) || 0;
+    if (!(b > 0)) { out.textContent = 'Enter your monthly bills to see your ratio.'; meaning.textContent = ''; return; }
+    const ratio = (i / b) * 100;
+    out.textContent = `Your Freedom Ratio: ${Math.round(ratio)}%`;
+    meaning.textContent =
+      ratio >= 150 ? 'Dynasty. Extra keeps compounding for the kids.' :
+      ratio >= 100 ? 'Free. Work is optional.' :
+      ratio >= 50 ? 'Half your life is paid for' :
+      ratio >= 25 ? 'It covers your car and insurance' :
+      ratio >= 10 ? 'Your money covers your phone and streaming' :
+      'Just getting started. Every dollar counts.';
+  }
+  bills.addEventListener('input', updateRatio);
+  income.addEventListener('input', updateRatio);
+</script>
 </body>
 </html>
